@@ -1,0 +1,228 @@
+body{
+    background-color: rgb(222, 223, 207);
+}
+.card{
+    position: relative;
+    /* background-color: white; */
+    margin-top: 0px;
+    max-height: 416px;
+    border-radius: 10px;
+    background-color: transparent;
+    width: 25vw;
+    height: 60vh;
+    perspective: 1000px;
+}
+.img1{
+    background-image: linear-gradient(to bottom, rgba(255, 176, 28, 0.5), rgba(255, 176, 28, 0.8)), url(../img/nat-5.jpg);
+    height: 150px;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    border-radius: 10px 10px 0 0;
+}
+.img2{
+    background-image: linear-gradient(to bottom, rgba(40, 196, 129,0.5), rgba(40, 196, 129,0.8)), url(../img/nat-6.jpg);
+    height: 150px;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    border-radius: 10px 10px 0 0;
+}
+.img3{
+    background-image: linear-gradient(to bottom, rgba(42, 114, 244,0.5), rgba(42, 114, 244,0.8)), url(../img/nat-7.jpg);
+    height: 150px;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    border-radius: 10px 10px 0 0;
+}
+.title1{
+    position: absolute;
+    top: 85px;
+    right: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, rgba(255, 176, 28, 0.7), rgba(255, 176, 28, 1.0));
+    padding: 5px;
+    color: white;
+}
+.title2{
+    position: absolute;
+    top:115px;
+    right: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, rgba(255, 176, 28, 0.7), rgba(255, 176, 28, 1.0));
+    padding: 5px;
+    color: white;
+}
+.title3{
+    position: absolute;
+    top: 85px;
+    right: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, rgba(40, 196, 129,0.7), rgba(40, 196, 129,1.0));
+    padding: 5px;
+    color: white;
+}
+.title4{
+    position: absolute;
+    top:115px;
+    right: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, rgba(40, 196, 129,0.7), rgba(40, 196, 129,1.0));
+    padding: 5px;
+    color: white;
+}
+.title5{
+    position: absolute;
+    top: 85px;
+    right: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, rgba(42, 114, 244,0.7), rgba(42, 114, 244,1.0));
+    padding: 5px;
+    color: white;
+}
+.title6{
+    position: absolute;
+    top:115px;
+    right: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, rgba(42, 114, 244,0.7), rgba(42, 114, 244,1.0));
+    padding: 5px;
+    color: white;
+}
+.titleBack1{
+    position: absolute;
+    color: white;
+    right: 50%;
+    transform: translateX(50%);
+    top: 100px;
+    font-size: 10px;
+}
+.titleBack2{
+    position: absolute;
+    color: white;
+    right: 50%;
+    transform: translateX(50%);
+    top: 130px;
+    font-size: 50px;
+}
+.titleBack3{
+    position: absolute;
+    color: gray;
+    right: 50%;
+    transform: translateX(50%);
+    top: 270px;
+    font-size: 14px;
+    border-radius: 20px;
+    background-color: white; 
+    padding: 10px 30px 10px 30px;
+}
+.list{
+    list-style-type: none;
+    margin-top: 20px;
+    text-align: center;
+    color: gray;
+    font-size: smaller;
+    padding: 20px;
+}
+.list>li{
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+.list>li:last-child{
+    border-bottom: none;
+}
+.base{
+    border-radius: 10px;
+    box-shadow: 1px 7px 17px rgb(180, 180, 180);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
+}
+.card:hover .base{
+    transform: rotateY(180deg);
+}
+.front1, .front2, .front3, .back1, .back2, .back3{
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 10px;
+}
+.front1, .front2, .front3{
+    background-color: white;
+}
+.back1{
+    background-color: rgb(255, 176, 28);
+    transform: rotateY(180deg);
+}
+.back2{
+    background-color: rgb(40, 196, 129);
+    transform: rotateY(180deg);
+}
+.back3{
+    background-color: rgb(42, 114, 244);
+    transform: rotateY(180deg);
+}
+@media screen and (max-width: 480px) {
+    .card{
+        width: 90vw;
+        left: 5vw;
+        top: 3vh;
+    }
+    .card:hover .base{
+        transform: none;
+    }
+    .base{
+        box-shadow: none;
+    }
+    .front1, .front2, .front3, .back1, .back2, .back3{
+        backface-visibility: visible;
+        transform: rotateY(0deg);
+        /* border: 1px solid black; */
+        /* box-shadow: 1px 7px 17px black; */
+    }
+    .back1, .back2, .back3{
+        clip-path: polygon(0 47%, 100% 40%, 100% 100%, 0 100%);
+        border-radius: 0 0 10px 10px;
+    }
+    .front1{
+        top: 0%;
+    }
+    .back1{
+        top: 50%;
+    }
+    .front2{
+        top: 60%;
+    }
+    .back2{
+        top: 110%;
+    }
+    .front3{
+        top: 120%;
+    }
+    .back3{
+        top: 170%;
+    }
+    .title1{
+        top: 115px;
+        right: 90px;
+    }
+    .title3{
+        top: 115px;
+        right: 56px;
+    }
+    .title5{
+        top: 115px;
+        right: 116px;
+    }
+    .titleBack1{
+        top: 230px;
+    }
+    .titleBack2{
+        top: 240px;
+    }
+    .titleBack3{
+        top: 340px;
+    }
+  }
